@@ -5,4 +5,17 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="thursday">Thursday</string>
     <string name="weather_icon_description">Weather icon showing cloudy weather</string>
+    <string name="monday">Monday</string>
+    <string name="_30_c_sunny">30°C - Sunny</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="_25_c_cloudy">25°C - Cloudy</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="_24_c_rainy">24°C - Rainy</string>
+    <string name="_23_c_rainy">23°C - Rainy</string>
+    <string name="_23_c_tempestuously">23°C - Tempestuously</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <string name="_32_c_sunny">32°C - Sunny</string>
+    <string name="sunday">Sunday</string>
+    <string name="_36_c_sunny">36°C - Sunny</string>
 </resources>
