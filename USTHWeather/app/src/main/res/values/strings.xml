@@ -18,4 +18,8 @@
     <string name="_32_c_sunny">32°C - Sunny</string>
     <string name="sunday">Sunday</string>
     <string name="_36_c_sunny">36°C - Sunny</string>
+    <string name="main_weather_icon">Main weather icon</string>
+    <string name="sunny_cloud">Sunny cloud</string>
+    <string name="hanoi">Hanoi</string>
+    <string name="_23_c_storm">23°C - Storm</string>
 </resources>

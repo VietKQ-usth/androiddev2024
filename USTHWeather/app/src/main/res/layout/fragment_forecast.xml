@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linear_layout_forecast"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="#FF1976D2"
     tools:context=".ForecastFragment">
@@ -23,8 +23,8 @@
             android:padding="16dp">
 
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:contentDescription="@string/weather_icon_description"
                 android:src="@drawable/sunny_02" />
 
@@ -32,20 +32,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="34dp"
                 android:layout_gravity="center_vertical"
-                android:layout_marginStart="56dp"
+                android:layout_marginStart="65dp"
                 android:text="@string/monday"
                 android:textColor="#FFFFFFFF"
-                android:textSize="18sp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginStart="180dp"
+                android:layout_marginStart="220dp"
                 android:text="@string/_30_c_sunny"
                 android:textColor="#FFFFFFFF"
-                android:textSize="16sp" />
+                android:textSize="20sp" />
         </RelativeLayout>
 
         <!-- Tuesday -->
@@ -56,8 +56,8 @@
             android:padding="16dp">
 
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:contentDescription="@string/weather_icon_description"
                 android:src="@drawable/cloudy_08" />
 
@@ -65,20 +65,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="34dp"
                 android:layout_gravity="center_vertical"
-                android:layout_marginStart="56dp"
+                android:layout_marginStart="65dp"
                 android:text="@string/tuesday"
                 android:textColor="#FFFFFFFF"
-                android:textSize="18sp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginStart="180dp"
+                android:layout_marginStart="220dp"
                 android:text="@string/_25_c_cloudy"
                 android:textColor="#FFFFFFFF"
-                android:textSize="16sp" />
+                android:textSize="20sp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -88,8 +88,8 @@
             android:padding="16dp">
 
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:contentDescription="@string/weather_icon_description"
                 android:src="@drawable/raining" />
 
@@ -97,20 +97,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="34dp"
                 android:layout_gravity="center_vertical"
-                android:layout_marginStart="56dp"
+                android:layout_marginStart="65dp"
                 android:text="@string/wednesday"
                 android:textColor="#FFFFFFFF"
-                android:textSize="18sp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginStart="180dp"
+                android:layout_marginStart="220dp"
                 android:text="@string/_24_c_rainy"
                 android:textColor="#FFFFFFFF"
-                android:textSize="16sp" />
+                android:textSize="20sp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -120,8 +120,8 @@
             android:padding="16dp">
 
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:contentDescription="@string/weather_icon_description"
                 android:src="@drawable/raining" />
 
@@ -129,20 +129,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="34dp"
                 android:layout_gravity="center_vertical"
-                android:layout_marginStart="56dp"
+                android:layout_marginStart="65dp"
                 android:text="@string/thursday"
                 android:textColor="#FFFFFFFF"
-                android:textSize="18sp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginStart="180dp"
+                android:layout_marginStart="220dp"
                 android:text="@string/_23_c_rainy"
                 android:textColor="#FFFFFFFF"
-                android:textSize="16sp" />
+                android:textSize="20sp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -152,8 +152,8 @@
             android:padding="16dp">
 
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:contentDescription="@string/weather_icon_description"
                 android:src="@drawable/storm" />
 
@@ -161,20 +161,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="34dp"
                 android:layout_gravity="center_vertical"
-                android:layout_marginStart="56dp"
+                android:layout_marginStart="65dp"
                 android:text="@string/friday"
                 android:textColor="#FFFFFFFF"
-                android:textSize="18sp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginStart="180dp"
-                android:text="@string/_23_c_tempestuously"
+                android:layout_marginStart="220dp"
+                android:text="@string/_23_c_storm"
                 android:textColor="#FFFFFFFF"
-                android:textSize="16sp" />
+                android:textSize="20sp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -184,8 +184,8 @@
             android:padding="16dp">
 
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:contentDescription="@string/weather_icon_description"
                 android:src="@drawable/sunny_02" />
 
@@ -193,20 +193,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="34dp"
                 android:layout_gravity="center_vertical"
-                android:layout_marginStart="56dp"
+                android:layout_marginStart="65dp"
                 android:text="@string/saturday"
                 android:textColor="#FFFFFFFF"
-                android:textSize="18sp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginStart="180dp"
+                android:layout_marginStart="220dp"
                 android:text="@string/_32_c_sunny"
                 android:textColor="#FFFFFFFF"
-                android:textSize="16sp" />
+                android:textSize="20sp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -216,8 +216,8 @@
             android:padding="16dp">
 
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:contentDescription="@string/weather_icon_description"
                 android:src="@drawable/sunny_02" />
 
@@ -225,20 +225,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="34dp"
                 android:layout_gravity="center_vertical"
-                android:layout_marginStart="56dp"
+                android:layout_marginStart="65dp"
                 android:text="@string/sunday"
                 android:textColor="#FFFFFFFF"
-                android:textSize="18sp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginStart="180dp"
+                android:layout_marginStart="220dp"
                 android:text="@string/_36_c_sunny"
                 android:textColor="#FFFFFFFF"
-                android:textSize="16sp" />
+                android:textSize="20sp" />
         </RelativeLayout>
 
         <!-- Các ngày còn lại -->
