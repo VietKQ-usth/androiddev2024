@@ -15,7 +15,6 @@ import android.widget.TextView;
 
 
 public class ForecastFragment extends Fragment {
-
     public ForecastFragment() {
     }
 
