@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">USTH Weather</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="thursday">Thursday</string>
+    <string name="mon">Mon</string>
+    <string name="icon_weather">Icon Weather</string>
+    <string name="partly_cloudy">Partly Cloudy\n24C - 31C</string>
+    <string name="cloudy">12C\nCloudy</string>
+    <string name="storm">Tornado\n20C - 24C</string>
+    <string name="snowy">Snowy\n-4C - 1C</string>
+    <string name="rain">Showers\n26C - 27C</string>
+    <string name="moon">Moon\n26C - 29C</string>
+</resources>

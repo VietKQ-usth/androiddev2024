@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".ForecastFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal"
+        android:paddingBottom="30dp"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/mon"
+            android:textColor="#3A3939"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="48dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/icon_weather"
+            android:src="@drawable/moon"
+            app:tint="#c90e0e" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/moon"
+            android:textColor="#3A3939"
+            android:textSize="16sp"
+            tools:ignore="RtlSymmetry" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="30dp"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Tue"
+            android:textColor="#3A3939"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="RtlCompat" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="48dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/icon_weather"
+            android:src="@drawable/rain"
+            app:tint="#c90e0e" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/rain"
+            android:textColor="#3A3939"
+            android:textSize="16sp"
+            tools:ignore="RtlSymmetry" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="30dp"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Wed"
+            android:textColor="#3A3939"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="48dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/icon_weather"
+            android:src="@drawable/snow"
+            app:tint="#c90e0e" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/snowy"
+            android:textColor="#3A3939"
+            android:textSize="16sp"
+            tools:ignore="RtlSymmetry" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="30dp"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Thu"
+            android:textColor="#3A3939"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="48dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/icon_weather"
+            android:src="@drawable/tornado"
+            app:tint="#c90e0e" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/storm"
+            android:textColor="#3A3939"
+            android:textSize="16sp"
+            tools:ignore="RtlSymmetry" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="30dp"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Fri"
+            android:textColor="#3A3939"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="48dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/icon_weather"
+            android:src="@drawable/weather"
+            app:tint="#c90e0e" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_weight="1"
+            android:text="@string/partly_cloudy"
+            android:textColor="#3A3939"
+            android:textSize="16sp"
+            tools:ignore="RtlSymmetry" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="30dp"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Sat"
+            android:textColor="#3A3939"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="48dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/icon_weather"
+            android:src="@drawable/snow"
+            app:tint="#c90e0e" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/snowy"
+            android:textColor="#3A3939"
+            android:textSize="16sp"
+            tools:ignore="RtlSymmetry" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="30dp"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Sun"
+            android:textColor="#3A3939"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="48dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/icon_weather"
+            android:src="@drawable/moon"
+            app:tint="#c90e0e" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/moon"
+            android:textColor="#3A3939"
+            android:textSize="16sp"
+            tools:ignore="RtlSymmetry" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="30dp"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/mon"
+            android:textColor="#3A3939"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="48dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/icon_weather"
+            android:src="@drawable/tornado"
+            app:tint="#c90e0e" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/storm"
+            android:textColor="#3A3939"
+            android:textSize="16sp"
+            tools:ignore="RtlSymmetry" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="30dp"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Tue"
+            android:textColor="#3A3939"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="48dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/icon_weather"
+            android:src="@drawable/tornado"
+            app:tint="#c90e0e" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/storm"
+            android:textColor="#3A3939"
+            android:textSize="16sp"
+            tools:ignore="RtlSymmetry" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="64dp"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Wed"
+            android:textColor="#3A3939"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="48dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/icon_weather"
+            android:src="@drawable/tornado"
+            app:tint="#c90e0e" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/storm"
+            android:textColor="#3A3939"
+            android:textSize="16sp"
+            tools:ignore="RtlSymmetry" />
+    </LinearLayout>
+
+</LinearLayout>
