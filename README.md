@@ -12,5 +12,5 @@ Student Info
 
 * Name: Nguyễn Duy Quân
 * ID: 22BI13372
-* Group ID: G4
-* Project Name: USTHWeather
+* Group ID: 9
+* Project Name: Flight Info
