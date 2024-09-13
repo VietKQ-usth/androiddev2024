@@ -12,7 +12,6 @@ import androidx.fragment.app.Fragment;
 import vn.edu.usth.usthweather.R;
 
 public class WeatherAndForecastFragment2 extends Fragment {
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,

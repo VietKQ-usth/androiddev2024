@@ -15,7 +15,6 @@ import vn.edu.usth.usthweather.R;
 public class WeatherFragment1 extends Fragment {
     public static final String BUNDLE_KEY = "BUNDLE_KEY";
 
-
     public WeatherFragment1() {
     }
 

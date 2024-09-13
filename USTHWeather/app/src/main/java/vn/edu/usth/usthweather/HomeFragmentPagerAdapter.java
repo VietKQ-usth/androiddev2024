@@ -36,5 +36,4 @@ public class HomeFragmentPagerAdapter extends FragmentStateAdapter {
     public int getItemCount() {
         return 3;
     }
-
 }

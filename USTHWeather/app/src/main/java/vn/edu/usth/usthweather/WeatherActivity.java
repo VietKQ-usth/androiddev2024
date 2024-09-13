@@ -32,6 +32,7 @@ public class WeatherActivity extends AppCompatActivity {
         initViewPager();
     }
 
+
     private void initViewPager() {
         ViewPager2 pager = findViewById(R.id.pager2);
         //HomeFragmentPagerAdapter adapter = new HomeFragmentPagerAdapter(getSupportFragmentManager(), getLifecycle());
