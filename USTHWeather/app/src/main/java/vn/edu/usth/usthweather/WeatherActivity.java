@@ -3,7 +3,10 @@ package vn.edu.usth.usthweather;
 import android.os.Bundle;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
+import androidx.viewpager2.widget.ViewPager2;
 
 public class WeatherActivity extends AppCompatActivity {
     @Override
@@ -13,16 +16,22 @@ public class WeatherActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.weather_activity);
 
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.layout_weather, new WeatherFragment())
-                    .commit();
-        }
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.linear_layout_forecast, new ForecastFragment())
-                    .commit();
-        }
+        ViewPager2 viewPager = findViewById(R.id.view_pager);
+
+        // Set the FragmentStateAdapter directly
+        viewPager.setAdapter(new FragmentStateAdapter(this) {
+            @NonNull
+            @Override
+            public WeatherAndForecastFragment createFragment(int position) {
+                // Create a new WeatherAndForecastFragment instance for each page
+                return new WeatherAndForecastFragment();
+            }
+
+            @Override
+            public int getItemCount() {
+                return 3; // Number of pages
+            }
+        });
     }
     protected void onResume() {
         super.onResume();
