@@ -1,65 +1,39 @@
 package vn.edu.usth.usthweather;
 
 import android.os.Bundle;
-import android.util.Log;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 public class WeatherActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.d("WeatherActivity", "onCreate called");
-        setTheme(androidx.appcompat.R.style.Theme_AppCompat_Light_NoActionBar);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.weather_activity);
 
         ViewPager2 viewPager = findViewById(R.id.view_pager);
+        TabLayout tabLayout = findViewById(R.id.tabLayout);
 
-        // Set the FragmentStateAdapter directly
-        viewPager.setAdapter(new FragmentStateAdapter(this) {
-            @NonNull
-            @Override
-            public WeatherAndForecastFragment createFragment(int position) {
-                // Create a new WeatherAndForecastFragment instance for each page
-                return new WeatherAndForecastFragment();
-            }
+        // Khởi tạo HomeFragmentPagerAdapter với FragmentActivity (WeatherActivity)
+        HomeFragmentPagerAdapter homeFragmentPagerAdapter = new HomeFragmentPagerAdapter(getSupportFragmentManager(), getLifecycle());
+        viewPager.setAdapter(homeFragmentPagerAdapter);
 
-            @Override
-            public int getItemCount() {
-                return 3; // Number of pages
-            }
-        });
+        // Tạo tiêu đề cho mỗi trang
+        new TabLayoutMediator(tabLayout, viewPager,
+                (tab, position) -> {
+                    switch (position) {
+                        case 0:
+                            tab.setText("Hanoi");
+                            break;
+                        case 1:
+                            tab.setText("Paris");
+                            break;
+                        case 2:
+                            tab.setText("Москва");
+                            break;
+                    }
+                }).attach();
     }
-    protected void onResume() {
-        super.onResume();
-        Log.i("WeatherActivity", "onResume called");
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.i("WeatherActivity", "onPause called");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.i("WeatherActivity", "onStop called");
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        Log.i("WeatherActivity", "onRestart called");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.i("WeatherActivity", "onDestroy called");
-    }
-
 }

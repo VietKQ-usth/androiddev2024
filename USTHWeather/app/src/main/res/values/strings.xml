@@ -22,4 +22,6 @@
     <string name="sunny_cloud">Sunny cloud</string>
     <string name="hanoi">Hanoi</string>
     <string name="_23_c_storm">23°C - Storm</string>
+    <string name="usth_weather">usth_weather</string>
+    <string name="weather_usth">Weather USTH</string>
 </resources>

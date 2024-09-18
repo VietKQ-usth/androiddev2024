@@ -5,8 +5,26 @@
     android:id="@+id/activity_weather"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/header_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@string/weather_usth"
+        android:textSize="24sp"
+        android:textColor="#FF000000"
+        android:gravity="center"
+        android:background="#FFDDDDDD"/>
+
+    <!-- TabLayout -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
 </LinearLayout>

@@ -18,7 +18,7 @@
             android:name=".WeatherActivity"
             android:exported="true"
             android:label="@string/title_activity_weather"
-            android:theme="@style/Theme.USTHWeather">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
