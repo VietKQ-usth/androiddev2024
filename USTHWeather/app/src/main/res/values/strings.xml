@@ -1,10 +1,9 @@
 <resources>
     <string name="app_name">USTH Weather</string>
-    <string name="title_activity_weather">WeatherActivity</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_weather" translatable="false">WeatherActivity</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="thursday">Thursday</string>
-    <string name="weather_icon_description">Weather icon showing cloudy weather</string>
+    <string name="weather_icon_description" translatable="false">Weather icon showing cloudy weather</string>
     <string name="monday">Monday</string>
     <string name="_30_c_sunny">30°C - Sunny</string>
     <string name="tuesday">Tuesday</string>
@@ -12,16 +11,16 @@
     <string name="wednesday">Wednesday</string>
     <string name="_24_c_rainy">24°C - Rainy</string>
     <string name="_23_c_rainy">23°C - Rainy</string>
-    <string name="_23_c_tempestuously">23°C - Tempestuously</string>
+    <string name="_23_c_tempestuously" translatable="false">23°C - Tempestuously</string>
     <string name="friday">Friday</string>
     <string name="saturday">Saturday</string>
     <string name="_32_c_sunny">32°C - Sunny</string>
     <string name="sunday">Sunday</string>
     <string name="_36_c_sunny">36°C - Sunny</string>
-    <string name="main_weather_icon">Main weather icon</string>
-    <string name="sunny_cloud">Sunny cloud</string>
+    <string name="main_weather_icon" translatable="false">Main weather icon</string>
+    <string name="sunny_cloud" translatable="false">Sunny cloud</string>
     <string name="hanoi">Hanoi</string>
     <string name="_23_c_storm">23°C - Storm</string>
-    <string name="usth_weather">usth_weather</string>
-    <string name="weather_usth">Weather USTH</string>
+    <string name="usth_weather" translatable="false">usth_weather</string>
+    <string name="weather_usth" translatable="false">Weather USTH</string>
 </resources>
