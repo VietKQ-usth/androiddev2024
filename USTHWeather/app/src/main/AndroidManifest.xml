@@ -5,7 +5,6 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -15,7 +14,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:targetApi="35">
-
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@xml/weather_menu" />
+        <activity
+            android:name=".PrefActivity"
+            android:exported="false" />
         <activity
             android:name=".WeatherActivity"
             android:exported="true"

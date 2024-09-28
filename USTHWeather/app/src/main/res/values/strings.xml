@@ -23,4 +23,6 @@
     <string name="_23_c_storm">23°C - Storm</string>
     <string name="usth_weather" translatable="false">usth_weather</string>
     <string name="weather_usth" translatable="false">Weather USTH</string>
+    <string name="refresh">Refresh</string>
+    <string name="settings">Settings</string>
 </resources>
