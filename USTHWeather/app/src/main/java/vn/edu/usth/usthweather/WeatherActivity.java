@@ -1,12 +1,14 @@
 package vn.edu.usth.usthweather;
 
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
-import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Toast;
-
+import android.Manifest;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -16,13 +18,17 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
+import java.io.File;
 import java.io.IOException;
-
-import vn.edu.usth.usthweather.ui.theme.MediaStoreHelper;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.nio.file.Files;
+import java.util.Objects;
 
 public class WeatherActivity extends AppCompatActivity {
-    private static final int REQUEST_CODE = 101;
-
+    private MediaPlayer mediaPlayer;
+    private static final int REQUEST_WRITE_EXTERNAL_STORAGE = 2;
+    private static final int REQUEST_READ_MEDIA_AUDIO = 3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +36,7 @@ public class WeatherActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
 
         ViewPager2 viewPager = findViewById(R.id.view_pager);
         TabLayout tabLayout = findViewById(R.id.tabLayout);
@@ -37,14 +44,26 @@ public class WeatherActivity extends AppCompatActivity {
         HomeFragmentPagerAdapter homeFragmentPagerAdapter = new HomeFragmentPagerAdapter(getSupportFragmentManager(), getLifecycle());
         viewPager.setAdapter(homeFragmentPagerAdapter);
 
-        if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_EXTERNAL_STORAGE)
-                != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this,
-                    new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE},
-                    REQUEST_CODE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_MEDIA_AUDIO)
+                    != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.READ_MEDIA_AUDIO},
+                        REQUEST_READ_MEDIA_AUDIO);
+            } else {
+                copyAndPlayMusic();
+            }
         } else {
-            saveAndPlayMusic(); // Lưu và phát nhạc
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                    != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                        REQUEST_WRITE_EXTERNAL_STORAGE);
+            } else {
+                copyAndPlayMusic();
+            }
         }
+
 
         new TabLayoutMediator(tabLayout, viewPager,
                 (tab, position) -> {
@@ -62,40 +81,96 @@ public class WeatherActivity extends AppCompatActivity {
                 }).attach();
     }
 
-    private void saveAndPlayMusic() {
-        Uri audioUri = MediaStoreHelper.saveAudioToMediaStore(this);
-        playMusic(audioUri); // Phát nhạc ngay sau khi lưu thành công
-    }
-
-    private void playMusic(Uri audioUri) {
-        if (audioUri == null) {
-            Log.e("WeatherActivity", "audioUri is null, cannot play music.");
-            Toast.makeText(this, "Audio URI is null.", Toast.LENGTH_SHORT).show();
-            return; // Thoát nếu audioUri không hợp lệ
-        }
-
-        MediaPlayer mediaPlayer = new MediaPlayer(); // Chuyển mediaPlayer thành biến cục bộ
-        try {
-            mediaPlayer.setDataSource(this, audioUri);
-            mediaPlayer.prepare(); // Chuẩn bị phát
-            mediaPlayer.setOnCompletionListener(mp -> Log.d("MediaPlayer", "Audio playback completed."));
-            mediaPlayer.start();   // Bắt đầu phát
-            Log.d("WeatherActivity", "Playing audio from URI: " + audioUri); // Loại bỏ toString()
-        } catch (IOException e) {
-            Log.e("WeatherActivity", "Error playing audio: " + e.getMessage());
-            Toast.makeText(this, "Error playing audio: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-        }
-    }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode,
+                                           @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == REQUEST_CODE) {
+        if (requestCode == REQUEST_WRITE_EXTERNAL_STORAGE || requestCode == REQUEST_READ_MEDIA_AUDIO) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                saveAndPlayMusic(); // Lưu và phát nhạc
+                copyAndPlayMusic();
             } else {
                 Toast.makeText(this, "Permission denied!", Toast.LENGTH_SHORT).show();
             }
         }
+    }
+    private void copyAndPlayMusic() {
+        try {
+            // Get the InputStream from assets
+            InputStream is = getAssets().open("my_music.mp3");
+
+            // Create a File in the app's external files directory
+            File musicFile = new File(getExternalFilesDir(null), "my_music.mp3");
+
+            // Copy the file
+            copyFile(is, musicFile);
+
+            // Play the music
+            mediaPlayer = new MediaPlayer();
+            mediaPlayer.setDataSource(musicFile.getAbsolutePath());
+            mediaPlayer.prepare();
+            mediaPlayer.start();
+        } catch (IOException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "Error playing music!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void copyFile(InputStream in, File dst) throws IOException {
+        try (OutputStream out = Files.newOutputStream(dst.toPath())) {
+            byte[] buf = new byte[1024];
+            int len;
+            while ((len = in.read(buf)) > 0) {
+                out.write(buf, 0, len);
+            }
+        }
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        // Dừng nhạc khi ứng dụng không còn hoạt động
+        if (mediaPlayer != null) {
+            mediaPlayer.pause(); // Tạm dừng phát nhạc
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Tiếp tục phát nhạc khi vào lại ứng dụng
+        if (mediaPlayer != null ) {
+            mediaPlayer.start(); // Tiếp tục phát nhạc
+        }
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // Release MediaPlayer resources
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.weather_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.action_refresh) {
+            Toast.makeText(this, "Refresh clicked", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (id == R.id.action_settings) {
+            Intent intent = new Intent(this, PrefActivity.class);
+            startActivity(intent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
