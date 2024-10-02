@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">USTH Weather</string>
+    <string name="thursday">Thứ Năm</string>
+    <string name="monday">Thứ Hai</string>
+    <string name="_30_c_sunny">30°C - Trời nắng</string>
+    <string name="tuesday">Thứ Ba</string>
+    <string name="_25_c_cloudy">25°C - Có mây</string>
+    <string name="wednesday">Thứ Tư</string>
+    <string name="_24_c_rainy">24°C - Trời mưa</string>
+    <string name="_23_c_rainy">23°C - Trời mưa</string>
+    <string name="friday">Thứ Sáu</string>
+    <string name="saturday">Thứ Bảy</string>
+    <string name="_32_c_sunny">32°C - Trời nắng</string>
+    <string name="sunday">Chủ Nhật</string>
+    <string name="_36_c_sunny">36°C - Trời nắng</string>
+    <string name="hanoi">Hà Nội</string>
+    <string name="_23_c_storm">23°C - Có bão</string>
+</resources>
