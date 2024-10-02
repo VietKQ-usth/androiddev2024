@@ -5,6 +5,8 @@ import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -152,7 +154,6 @@ public class WeatherActivity extends AppCompatActivity {
         }
     }
 
-    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.weather_menu, menu);
         return true;
@@ -163,9 +164,27 @@ public class WeatherActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.action_refresh) {
-            Toast.makeText(this, "Refresh clicked", Toast.LENGTH_SHORT).show();
+            // Hiển thị Toast khi bắt đầu refresh
+            Toast.makeText(this, "Refreshing...", Toast.LENGTH_SHORT).show();
+
+            // Mô phỏng yêu cầu mạng bằng cách sử dụng Thread và Handler
+            new Thread(() -> {
+                try {
+                    // Mô phỏng độ trễ của yêu cầu mạng (2 giây)
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                // Sau khi hoàn tất, sử dụng Handler để cập nhật UI trên luồng chính
+                new Handler(Looper.getMainLooper()).post(() -> {
+                    // Hiển thị Toast khi refresh hoàn tất
+                    Toast.makeText(WeatherActivity.this, "Refresh completed", Toast.LENGTH_SHORT).show();
+                });
+            }).start();
             return true;
         } else if (id == R.id.action_settings) {
+            // Xử lý khi nhấn vào nút Settings
             Intent intent = new Intent(this, PrefActivity.class);
             startActivity(intent);
             return true;

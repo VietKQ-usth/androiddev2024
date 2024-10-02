@@ -4,11 +4,11 @@
     <item
         android:id="@+id/action_refresh"
         android:title="@string/refresh"
-        android:icon="@drawable/rotate_icon"
+        android:icon="@drawable/refresh"
         app:showAsAction="ifRoom" /> <!-- Hành động luôn hiển thị -->
 
     <item
         android:id="@+id/action_settings"
         android:title="@string/settings"
-        app:showAsAction="never" /> <!-- Hành động trong menu overflow -->
+        app:showAsAction="never" />
 </menu>
